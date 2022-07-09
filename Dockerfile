@@ -5,10 +5,12 @@ RUN mkdir docker-lab
 
 WORKDIR docker-lab
 
-ADD . .
+RUN mkdir input output
 
-ENV INPUT_DIR=./input
-ENV OUTPUT_DIR=./output
+COPY py_script.py .
+
+ENV INPUT_DIR=input
+ENV OUTPUT_DIR=output
 
 VOLUME $INPUT_DIR $OUTPUT_DIR
 
